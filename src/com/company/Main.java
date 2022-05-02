@@ -24,9 +24,8 @@ public class Main {
 
         Triangles triangles = new Triangles(N);
         Triangles rightTriangles = new Triangles(M);
-        rightTriangles.addTriangle(new RightTriangle(0, 5, 0, 5, 0, 0));
-        rightTriangles.addTriangle(new RightTriangle(0, 5, 0, 5, 0, 0));
-        rightTriangles.addTriangle(new RightTriangle(0, 5, 0, 5, 0, 0));
+        rightTriangles.addTriangle(new RightTriangle(9, 5, 0, 5, 0, 2));
+
 
         int X1, X2, X3;
         int Y1, Y2, Y3;
@@ -34,27 +33,27 @@ public class Main {
         for (int i = 0; i < N; i++) {
             while (!Triangle.isTriangleExists(X1 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, X2 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, X3 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, Y1 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, Y2 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, Y3 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5)) {
             }
-            Triangle triangle = new Triangle(X1, X2, X3, Y1, Y2, Y3);
-            triangles.addTriangle(triangle);
+            triangles.addTriangle(new Triangle(X1, X2, X3, Y1, Y2, Y3));//Чирьы бект не пересозздовать анонимный объект
         }
 
-        for (int i = 0; i < M; i++) {
+        for (int i = 0; i < M-3; i++) {
             while (!RightTriangle.isTriangleRight(X1 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, X2 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, X3 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, Y1 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, Y2 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, Y3 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5)) {
             }
-            RightTriangle rightTriangle = new RightTriangle(X1, X2, X3, Y1, Y2, Y3);
-            rightTriangles.addTriangle(rightTriangle);
-
+            rightTriangles.addTriangle(new RightTriangle(X1, X2, X3, Y1, Y2, Y3));
         }
+
+        rightTriangles.addTriangle(new RightTriangle(9, 5, 0, 5, 0, 2));
+        rightTriangles.addTriangle(new RightTriangle(9, 5, 0, 5, 0, 2));
 
         System.out.println(triangles + System.lineSeparator());
 
         System.out.println(rightTriangles + System.lineSeparator());
 
 
-        System.out.println("Triangle with maximal area:" + triangles.findMaxAreaOfTriangle());
-        System.out.println("Right triangle with maximal area:" + rightTriangles.findMaxAreaOfTriangle());
-        System.out.println("Triangle with minimal area:" + triangles.findMinAreaOfTriangle());
-        System.out.println("Right triangle with minimal area:" + rightTriangles.findMinAreaOfTriangle());
+        System.out.println("Triangle with maximal square:" + triangles.findTriangleMaxSquare());
+        System.out.println("Right triangle with maximal square:" + rightTriangles.findTriangleMaxSquare());
+        System.out.println("Triangle with minimal square:" + triangles.findTriangleMinSquare());
+        System.out.println("Right triangle with minimal square:" + rightTriangles.findTriangleMinSquare());
         System.out.println("Numbers of identical right Triangles:" + rightTriangles.findIdenticalTriangles());
 
     }

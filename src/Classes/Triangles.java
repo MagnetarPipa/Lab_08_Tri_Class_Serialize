@@ -18,21 +18,21 @@ public class Triangles {
 
     }
 
-    public Triangle findMaxAreaOfTriangle() {
+    public Triangle findTriangleMaxSquare() {
 
         Triangle maxTriangleArea = triangles[0];
         for (int i = 1; i < triangles.length; i++) {
-            if (triangles[i].getArea() >= maxTriangleArea.getArea()) {
+            if (triangles[i].getArea() > maxTriangleArea.getArea()) {
                 maxTriangleArea = triangles[i];
             }
         }
         return maxTriangleArea;
     }
 
-    public Triangle findMinAreaOfTriangle() {
+    public Triangle findTriangleMinSquare() {
         Triangle minTriangleArea = triangles[0];
         for (int i = 1; i < triangles.length; i++) {
-            if (triangles[i].getArea() <= minTriangleArea.getArea()) {
+            if (triangles[i].getArea() < minTriangleArea.getArea()) {
                 minTriangleArea = triangles[i];
             }
         }
@@ -42,22 +42,18 @@ public class Triangles {
     public String findIdenticalTriangles() {
 
         String numberOfIdenticalTriangles = " ";
-        Triangle IdenticalTriangle = triangles[0];
-        int count = 0;
-        for (int i = 1; i < triangles.length; i++) {
 
-            if ((triangles[i].getLengthA()) == (IdenticalTriangle.getLengthA()) && (triangles[i].getLengthB()) == (IdenticalTriangle.getLengthB()) && ((triangles[i].getLengthC()) == (IdenticalTriangle.getLengthC()))) {
-                count++;
-                if (count == 1) {
-                    numberOfIdenticalTriangles += i + " ";
+        for (int i = 0; i < triangles.length; i++) {
+            for (int j = 1; j < triangles.length; j++) {
+                if ((triangles[i].getLengthA()) == (triangles[j].getLengthA()) && ((triangles[i].getLengthB()) == (triangles[j].getLengthB())) && ((triangles[i].getLengthC()) == (triangles[j].getLengthC()) && i != j)) {
+                    numberOfIdenticalTriangles+=(i+1)+" ";
+                    break;
                 }
-                numberOfIdenticalTriangles += i + 1 + " ";
             }
-            IdenticalTriangle = triangles[i];
         }
+
         return numberOfIdenticalTriangles;
     }
-
 
     @Override
     public String toString() {
