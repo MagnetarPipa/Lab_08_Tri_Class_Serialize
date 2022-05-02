@@ -33,7 +33,7 @@ public class Main {
         for (int i = 0; i < N; i++) {
             while (!Triangle.isTriangleExists(X1 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, X2 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, X3 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, Y1 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, Y2 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, Y3 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5)) {
             }
-            triangles.addTriangle(new Triangle(X1, X2, X3, Y1, Y2, Y3));//Чирьы бект не пересозздовать анонимный объект
+            triangles.addTriangle(new Triangle(X1, X2, X3, Y1, Y2, Y3));//Чтобы объект не пересоздавать,называется анонимный объект
         }
 
         for (int i = 0; i < M-3; i++) {

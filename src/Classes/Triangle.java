@@ -113,7 +113,7 @@ public class Triangle {
         return getLengthA() + getLengthB() + getLengthC();
     }
 
-    public double getArea() {
+    public double getSquare() {
 
         double perimeter = getPerimeter() / 2;
         return Math.sqrt(perimeter * (perimeter - getLengthA()) * (getLengthB()) * (perimeter - getLengthC()));
@@ -132,7 +132,7 @@ public class Triangle {
                 "; Side B=" + String.format("%.3f", getLengthB()) +
                 "; Side C=" + String.format("%.3f", getLengthC()) +
                 "; Perimeter" + String.format("%.3f", getPerimeter()) +
-                "; Area=" + String.format("%.3f", getArea()) +
+                "; Area=" + String.format("%.3f", getSquare()) +
                 "; First angle=" + String.format("%.3f", getAngle_1()) +
                 "; Second angle=" + String.format("%.3f", getAngle_2()) +
                 "; Third angle=" + String.format("%.3f", getAngle_3()) +

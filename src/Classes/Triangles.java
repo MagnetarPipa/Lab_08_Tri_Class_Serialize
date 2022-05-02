@@ -22,7 +22,7 @@ public class Triangles {
 
         Triangle maxTriangleArea = triangles[0];
         for (int i = 1; i < triangles.length; i++) {
-            if (triangles[i].getArea() > maxTriangleArea.getArea()) {
+            if (triangles[i].getSquare() > maxTriangleArea.getSquare()) {
                 maxTriangleArea = triangles[i];
             }
         }
@@ -32,7 +32,7 @@ public class Triangles {
     public Triangle findTriangleMinSquare() {
         Triangle minTriangleArea = triangles[0];
         for (int i = 1; i < triangles.length; i++) {
-            if (triangles[i].getArea() < minTriangleArea.getArea()) {
+            if (triangles[i].getSquare() < minTriangleArea.getSquare()) {
                 minTriangleArea = triangles[i];
             }
         }
