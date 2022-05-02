@@ -42,16 +42,22 @@ public class Triangles {
     public String findIdenticalTriangles() {
 
         String numberOfIdenticalTriangles = " ";
-
+        boolean isFirstIdentical;
+        boolean[] IdenticalArray = new boolean[triangles.length];
         for (int i = 0; i < triangles.length; i++) {
-            for (int j = 1; j < triangles.length; j++) {
-                if ((triangles[i].getLengthA()) == (triangles[j].getLengthA()) && ((triangles[i].getLengthB()) == (triangles[j].getLengthB())) && ((triangles[i].getLengthC()) == (triangles[j].getLengthC()) && i != j)) {
-                    numberOfIdenticalTriangles+=(i+1)+" ";
-                    break;
+            isFirstIdentical = true;
+            for (int j = i + 1; j < triangles.length; j++) {
+                if ((!IdenticalArray[j]) && (triangles[j].getLengthA()) == (triangles[i].getLengthA()) && ((triangles[j].getLengthB()) == (triangles[i].getLengthB())) && ((triangles[j].getLengthC()) == (triangles[i].getLengthC()))) {
+                    IdenticalArray[j]=true;
+                    if (isFirstIdentical) {
+                        isFirstIdentical = false;
+                        numberOfIdenticalTriangles += (i + 1) + " ";
+                    }
+                    numberOfIdenticalTriangles += (j + 1) + " ";
                 }
             }
+            numberOfIdenticalTriangles+="\n";
         }
-
         return numberOfIdenticalTriangles;
     }
 
@@ -60,7 +66,7 @@ public class Triangles {
         String result = "Triangles: " + System.lineSeparator();
         for (int i = 0; i < triangles.length; i++) {
 
-            result += triangles[i] + System.lineSeparator();
+            result += "№"+(i+1)+" "+triangles[i] + System.lineSeparator();
         }
         return result;
     }
