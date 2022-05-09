@@ -2,6 +2,7 @@ package com.company;
 
 
 import Classes.RightTriangle;
+import Classes.Triagles_List;
 import Classes.Triangle;
 import Classes.Triangles;
 
@@ -63,6 +64,12 @@ public class Main {
         System.out.println("Right triangle with minimal square:" + rightTriangles.findTriangleMinSquare());
         System.out.println("Numbers of identical right Triangles:" + rightTriangles.findIdenticalTriangles());
 
+
+        Triagles_List triangles_list = new Triagles_List();
+
+        triangles_list.add(new Triangle(0,0,0,6,4,1));
+        triangles_list.add(new Triangle(1,1,0,6,4,1));
+        System.out.println(triangles_list);
     }
 
 }
