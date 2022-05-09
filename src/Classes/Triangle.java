@@ -132,7 +132,7 @@ public class Triangle {
                 "; Side B=" + String.format("%.3f", getLengthB()) +
                 "; Side C=" + String.format("%.3f", getLengthC()) +
                 "; Perimeter" + String.format("%.3f", getPerimeter()) +
-                "; Area=" + String.format("%.3f", getSquare()) +
+                "; Square=" + String.format("%.3f", getSquare()) +
                 "; First angle=" + String.format("%.3f", getAngle_1()) +
                 "; Second angle=" + String.format("%.3f", getAngle_2()) +
                 "; Third angle=" + String.format("%.3f", getAngle_3()) +

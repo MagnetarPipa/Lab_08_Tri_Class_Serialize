@@ -64,12 +64,38 @@ public class Main {
         System.out.println("Right triangle with minimal square:" + rightTriangles.findTriangleMinSquare());
         System.out.println("Numbers of identical right Triangles:" + rightTriangles.findIdenticalTriangles());
 
+        System.out.println("\n----------6_Лабараторная---------\n");
 
         Triagles_List triangles_list = new Triagles_List();
+        Triagles_List rightTriangles_list = new Triagles_List();
 
-        triangles_list.add(new Triangle(0,0,0,6,4,1));
-        triangles_list.add(new Triangle(1,1,0,6,4,1));
+        rightTriangles_list.add(new Triangle(0,0,0,6,4,1));
+        rightTriangles_list.add(new Triangle(0,0,0,6,4,1));
+
+        for (int i = 0; i < N; i++) {
+            while (!Triangle.isTriangleExists(X1 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, X2 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, X3 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, Y1 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, Y2 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, Y3 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5)) {
+            }
+            triangles_list.add(new Triangle(X1, X2, X3, Y1, Y2, Y3));//Чтобы объект не пересоздавать,называется анонимный объект
+        }
+
+        for (int i = 0; i < M; i++) {
+            while (!Triangle.isTriangleExists(X1 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, X2 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, X3 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, Y1 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, Y2 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5, Y3 = (int) (Math.random() * MAX_SIDE_LENGTH) - 5)) {
+            }
+            rightTriangles_list.add(new Triangle(X1, X2, X3, Y1, Y2, Y3));//Чтобы объект не пересоздавать,называется анонимный объект
+        }
+
+
         System.out.println(triangles_list);
+
+        System.out.println("Triangle with maximal square:" + triangles_list.findTriangle_List_MaxSquare());
+        System.out.println("Right triangle with maximal square:" + rightTriangles_list.findTriangle_List_MaxSquare());
+        System.out.println("Triangle with minimal square:" + triangles_list.findTriangle_List_MinSquare());
+        System.out.println("Right triangle with minimal square:" + rightTriangles_list.findTriangle_List_MinSquare());
+        System.out.println("Numbers of identical right Triangles:" + rightTriangles_list.findIdentical_List_Triangles());
+
+
+
     }
+
 
 }
