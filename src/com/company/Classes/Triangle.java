@@ -1,7 +1,10 @@
 package com.company.Classes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Triangle  implements Serializable {
 
     private int x1;
@@ -10,6 +13,9 @@ public class Triangle  implements Serializable {
     private int y1;
     private int y2;
     private int y3;
+
+    public Triangle() {
+    }
 
     public Triangle(int x1, int x2, int x3, int y1, int y2, int y3) {
         this.setX1(x1);

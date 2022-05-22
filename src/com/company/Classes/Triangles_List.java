@@ -1,9 +1,12 @@
 package com.company.Classes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.io.Serializable;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Triangles_List implements Serializable{
 
     private final List<Triangle> figure;
@@ -12,6 +15,9 @@ public class Triangles_List implements Serializable{
         figure = new ArrayList<>();
     }
 
+    public List<Triangle> getList() {
+        return figure;
+    }
 
     public void add(Triangle triangle) {
         figure.add(triangle);

@@ -1,8 +1,14 @@
 package com.company.Classes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class RightTriangle extends Triangle implements Serializable {
+
+    public RightTriangle() {
+    }
 
     public RightTriangle(int x1, int x2, int x3, int y1, int y2, int y3) {
         super(x1, x2, x3, y1, y2, y3);

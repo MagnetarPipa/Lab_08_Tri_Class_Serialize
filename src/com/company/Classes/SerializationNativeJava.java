@@ -10,7 +10,8 @@ public class SerializationNativeJava {
 
     public static void save_Triangle(Triangles_List triangles_List) {
         try {
-            FileOutputStream fileOut = new FileOutputStream("./src/Native_Ser_Triangles/" + "Triangles " +LocalDate.now()  + ".txt");
+
+            FileOutputStream fileOut = new FileOutputStream("./src/Native_Ser_Triangles/" + LocalDate.now() + "-" + LocalDateTime.now().getHour() + "-" + LocalDateTime.now().getMinute() + "-" + LocalDateTime.now().getSecond() + ".txt");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(triangles_List);
             out.close();
@@ -32,7 +33,8 @@ public class SerializationNativeJava {
 
     public static void save_Right_Triangle(Triangles_List right_triangles_List) {
         try {
-            FileOutputStream fileOut = new FileOutputStream("./src/Native_Ser_Triangles/" + "Right Triangles " + LocalDate.now()  + ".txt");
+
+            FileOutputStream fileOut = new FileOutputStream("./src/Native_Ser_Triangles/" + LocalDate.now() + "-" + LocalDateTime.now().getHour() + "-" + LocalDateTime.now().getMinute() + "-" + LocalDateTime.now().getSecond() + ".ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(right_triangles_List);
             out.close();
