@@ -1,14 +1,14 @@
-package Classes;
-
+package com.company.Classes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.Serializable;
 
-public class Triagles_List {
+public class Triangles_List implements Serializable{
 
     private final List<Triangle> figure;
 
-    public Triagles_List() {
+    public Triangles_List() {
         figure = new ArrayList<>();
     }
 
@@ -36,8 +36,8 @@ public class Triagles_List {
 
     }
 
-    public Triagles_List getListOf(String type) {
-        Triagles_List result = new Triagles_List();
+    public Triangles_List getListOf(String type) {
+        Triangles_List result = new Triangles_List();
 
         for (Triangle item : figure) {
             if (item.getClass().getSimpleName().equalsIgnoreCase(type))

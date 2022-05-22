@@ -1,6 +1,7 @@
-package Classes;
+package com.company.Classes;
 
 public class Triangles {
+
 
     final private Triangle[] triangles;
     private int currentTrianglesNumber;

@@ -1,6 +1,8 @@
-package Classes;
+package com.company.Classes;
 
-public class Triangle {
+import java.io.Serializable;
+
+public class Triangle  implements Serializable {
 
     private int x1;
     private int x2;
